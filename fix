@@ -1,0 +1,24 @@
+#/usr/bin/bash
+set -e
+
+die() {
+  echo >&2 "$1"
+  exit 1
+}
+
+fix=$1
+[[ -e "$fix" ]] || die "missing fix file $fix"
+[[ "$fix" =~ \.fix$ ]] || die "fix file must end with .fix"
+
+shift
+
+if [[ -z "$1" ]]; then
+  catmandu convert PICA --type plain --fix "$fix" to PICA --type plain --annotate 1
+else
+  file=$1
+  if [[ "$file" =~ \.dat\.gz$ ]]; then
+    zcat "$1" | catmandu convert PICA --type plus --fix "$fix" to PICA --type plain --annotate 1
+  else
+    cat "$1" | catmandu convert PICA --type plain --fix "$fix" to PICA --type plain --annotate 1
+  fi
+fi

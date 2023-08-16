@@ -1,4 +1,5 @@
 # Fix DDC edition statementin 045F$e
+pica_keep(0.../*)
 do pica_diff()
   do pica_each(045F)
     if pica_match($e,"^22 [aA]rabic?$")

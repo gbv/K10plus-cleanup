@@ -14,7 +14,7 @@ Requires Catmandu and current version of [Catmandu::PICA] as listed in `cpanfile
 
 ## Usage
 
-    catmandu convert pp --fix ddc-edition.fix to pp < records.pp
+    ./fix $FIX_FILE [$INPUT_FILE] > patches.pp
 
 ## See also
 

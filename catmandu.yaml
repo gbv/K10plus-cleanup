@@ -3,7 +3,11 @@ importer:
     package: PICA
     options:
       type: plain
-exporter:
+  dat:
+    package: PICA
+    options:
+      type: plus
+eexporter:
   pp:
     package: PICA
     options:
