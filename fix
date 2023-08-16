@@ -7,18 +7,24 @@ die() {
 }
 
 fix=$1
+file=$2
+
 [[ -e "$fix" ]] || die "missing fix file $fix"
 [[ "$fix" =~ \.fix$ ]] || die "fix file must end with .fix"
 
-shift
-
-if [[ -z "$1" ]]; then
-  catmandu convert PICA --type plain --fix "$fix" to PICA --type plain --annotate 1
-else
-  file=$1
-  if [[ "$file" =~ \.dat\.gz$ ]]; then
-    zcat "$1" | catmandu convert PICA --type plus --fix "$fix" to PICA --type plain --annotate 1
-  else
-    cat "$1" | catmandu convert PICA --type plain --fix "$fix" to PICA --type plain --annotate 1
+format=plain
+if [[ ! -z "$file" ]]; then
+  [[ -e "$file" ]] || die "missing input file $file"
+  name=$(basename "$file" .gz)
+  if [[ "$name" =~ \.dat$ ]]; then
+    format=plus
   fi
 fi
+
+if [[ "$file" =~ \.gz$ ]]; then
+  zcat "$file" | \
+  catmandu convert PICA --type "$format" --fix "$fix" to PICA --type plain --annotate 1
+else
+  catmandu convert PICA --type "$format" --fix "$fix" to PICA --type plain --annotate 1
+fi
+
