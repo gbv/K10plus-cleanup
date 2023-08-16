@@ -1,0 +1,20 @@
+# Fix DDC edition statementin 045F$e
+do pica_diff()
+  do pica_each(045F)
+    if pica_match($e,"^22 [aA]rabic?$")
+      pica_update($e,"22/ara")
+    end
+    if pica_match($e,"^(DDC|n/a)$")
+      pica_remove(045F)
+    end
+    if pica_match($e,"^(DDC23ger|23/BSB)$")
+      pica_update($e,"23/ger")
+    end
+    if pica_match($e,"^(DDC22ger|22//ger)$")
+      pica_update($e,"22/ger")
+    end
+    if pica_match($e,"^20 ed$")
+      pica_update($e,"20")
+    end
+  end
+end
