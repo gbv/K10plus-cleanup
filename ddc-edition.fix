@@ -1,4 +1,10 @@
-# Fix DDC edition statementin 045F$e
+# Fix DDC edition statementin 045F$e to unify diverse forms and typos to most common form:
+#
+# [1-9][0-9]*(/[a-z]{3](/[0-9]{8})?)?
+#
+# For list of values found in current dump see 
+# <https://analytics.gbv.de/kxp/qa-catalogue/?tab=terms&query=*%3A*&groupId=0&facet=045Fe_ss>
+
 pica_keep(0.../*)
 do pica_diff()
   do pica_each(045F)
@@ -16,6 +22,9 @@ do pica_diff()
     end
     if pica_match($e,"^20 ed$")
       pica_update($e,"20")
+    end
+    if pica_match($e,"^(2 3|dc23)$")
+      pica_update($e,"23")
     end
   end
 end
