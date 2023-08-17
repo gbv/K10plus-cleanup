@@ -6,8 +6,6 @@ Analysis of K10plus catalogue with **QA Catalogue** reveals errors such as
 typos and wrongly used fields. Some of these can automatically be fixed using
 Catmandu and [Catmandu::PICA].
 
-See `*.fix` files in this repository for examples.
-
 ## Installation
 
 Requires Catmandu and current version of [Catmandu::PICA] as listed in `cpanfile`. Install with:
@@ -27,6 +25,13 @@ Some file extensions of input file are detected:
 - `*.dat.gz` is gzipped [normalized PICA]
 - `*.dat` is [normalized PICA]
 - everything else is [PICA Plain]
+
+## Examples
+
+See `*.fix` files in this repository for examples:
+
+- `ddc-edition.fix` - unify DDC edition statementin `045F$e`. [JIRA Issue](https://jira.gbv.de/browse/CBS-1765)
+- ...
 
 ## See also
 
