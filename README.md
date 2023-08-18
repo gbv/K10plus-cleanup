@@ -26,12 +26,19 @@ Some file extensions of input file are detected:
 - `*.dat` is [normalized PICA]
 - everything else is [PICA Plain]
 
+Script `kxpo` can be used to get K10plus records via SRU in online expansion form:
+
+    ./kxpo 1543420281                           # get via PPN
+    ./kxpo pica.isb=9783894017316 --total 1     # get first matching record by ISBN
+
 ## Examples
 
 See `*.fix` files in this repository for examples:
 
 - `ddc-edition.fix` - unify DDC edition statementin `045F$e`. [JIRA Issue](https://jira.gbv.de/browse/CBS-1765)
-- ...
+- `bk-74.50.fix` - replace deleted BK class 74.50X. Applied by searching via SRU:
+
+      ./kxpo pica.bkl=74.50X --total 500 | ./fix bk-74.50X.fix > bk-74.50X.pp
 
 ## See also
 
@@ -41,4 +48,3 @@ See `*.fix` files in this repository for examples:
 [Catmandu::PICA]: https://metacpan.org/release/Catmandu-PICA
 [normalized PICA]: https://format.gbv.de/pica/normalized
 [PICA Plain]: https://format.gbv.de/pica/plain
-

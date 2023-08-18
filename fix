@@ -23,8 +23,8 @@ fi
 
 if [[ "$file" =~ \.gz$ ]]; then
   zcat "$file" | \
-  catmandu convert PICA --type "$format" --fix "$fix" to PICA --type plain --annotate 1
+  catmandu convert PICA --type "$format" --fix "$fix" to ppatch
 else
-  catmandu convert PICA --type "$format" --fix "$fix" to PICA --type plain --annotate 1
+  catmandu convert PICA --type "$format" --fix "$fix" to ppatch
 fi
 

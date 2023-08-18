@@ -1,0 +1,13 @@
+# Change deleted BK class 74.50X to 74.30
+
+pica_keep(0.../*)
+pica_remove(0.../*$8)
+do pica_diff()
+  do pica_each(045Q/01)
+    if pica_match($9,106411810) # 74.50X
+      pica_remove()
+      pica_append('045Q/01 $9106416154') # 74.30 Kartographie: Allgemeines
+    end
+  end
+end
+ 

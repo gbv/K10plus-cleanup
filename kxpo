@@ -1,0 +1,10 @@
+#!/bin/bash
+if [[ -z "$1" ]]; then
+  echo "Usage: $0 PPN|SRU_QUERY [options]"
+elif [[ $1 =~ ^[0-9]+[0-9Xx$]$ ]]; then
+  ppn=$1
+  shift    
+  catmandu convert kxpo --query "pica.ppn=$ppn" "$@" to pp
+else    
+  catmandu convert kxpo --query "$@" to pp
+fi

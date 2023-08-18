@@ -1,1 +1,1 @@
-requires 'Catmandu::PICA', '>=1.16';
+requires 'Catmandu::PICA', '>=1.17';
