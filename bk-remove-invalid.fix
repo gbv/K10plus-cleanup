@@ -1,5 +1,5 @@
 # Delete BK fields with malformed notation
-# Usage: ./kxpo pica.bkl=XX.XX | ./fix bk-remove-invalid-bk.fix > bk-remove-invalid-bk.patch
+# Usage: ./kxpo pica.bkl=XX.XX | ./fix bk-remove-invalid.fix
 
 pica_keep(0.../*)
 do pica_diff()
