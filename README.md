@@ -18,7 +18,7 @@ Create or reuse a `.fix` file in Catmandu fix language. Either call `catmandu`
 as documented with selected data source (e.g. records retrieved via unAPI or
 SRU or a plain PICA dump file) or use the tiny shell script `fix`:
 
-    ./fix $FIX_FILE [$INPUT_FILE] > patches.pp
+    ./fix $FIX_FILE [$INPUT_FILE] > patches.patch
 
 Some file extensions of input file are detected:
 
@@ -30,6 +30,11 @@ Script `kxpo` can be used to get K10plus records via SRU in online expansion for
 
     ./kxpo 1543420281                           # get via PPN
     ./kxpo pica.isb=9783894017316 --total 1     # get first matching record by ISBN
+
+To validate a Patch file and give statistics run (given `$patchfile` has extension `.patch`):
+
+    picadata count -$patchfile
+    picadata fields $patchfile
 
 ## Examples
 

@@ -1,5 +1,5 @@
 # Change deleted BK class 74.50X to 74.30
-# Usage: ./kxpo pica.bkl=74.50X --total 500 | ./fix bk-74.50X.fix > bk-74.50X.pp
+# Usage: ./kxpo pica.bkl=74.50X --total 500 | ./fix bk-74.50X.fix > bk-74.50X.patch
 
 pica_keep(0.../*)
 pica_remove(0.../*$8)
