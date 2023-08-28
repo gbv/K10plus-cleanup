@@ -1,0 +1,11 @@
+# Delete BK fields with malformed notation
+# Usage: ./kxpo pica.bkl=XX.XX | ./fix bk-remove-invalid-bk.fix > bk-remove-invalid-bk.pp
+
+pica_keep(0.../*)
+do pica_diff()
+  do pica_each(045Q/01)
+    if pica_match($a,"XX\.XX")
+      pica_remove()
+    end
+  end
+end

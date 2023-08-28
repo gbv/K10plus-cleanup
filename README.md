@@ -35,8 +35,11 @@ Script `kxpo` can be used to get K10plus records via SRU in online expansion for
 
 See `*.fix` files in this repository for examples:
 
-- `ddc-edition.fix` - unify DDC edition statementin `045F$e`. [JIRA Issue](https://jira.gbv.de/browse/CBS-1765)
-- `bk-74.50.fix` - replace deleted BK class 74.50X. [JIRA Issue](https://jira.gbv.de/browse/CBS-1766)
+fix file | description | JIRA issue
+---------|-------------|------------
+[ddc-edition.fix](ddc-edition.fix) | unify DDC edition statementin `045F$e` | <https://jira.gbv.de/browse/CBS-1765>
+[bk-74.50.fix](bk-74.50.fix) | deleted BK class `74.50X` | <https://jira.gbv.de/browse/CBS-1766>
+[bk-remove-invalid.fix](bk-remove-invalid.fix) | remove invalid BK notation `XX.XX` | <https://jira.gbv.de/browse/CBS-1767>
 
 ## See also
 
