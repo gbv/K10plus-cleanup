@@ -1,12 +1,13 @@
 # Change deleted BK class 74.50X to 74.30
+# Usage: ./kxpo pica.bkl=74.50X --total 500 | ./fix bk-74.50X.fix > bk-74.50X.pp
 
 pica_keep(0.../*)
 pica_remove(0.../*$8)
 do pica_diff()
   do pica_each(045Q/01)
-    if pica_match($9,106411810) # 74.50X
+    if pica_match($9,106411810) # 74.50X Atlanten, Karten
       pica_remove()
-      pica_append('045Q/01 $9106416154') # 74.30 Kartographie: Allgemeines
+      # pica_append('045Q/01 $9106416154') # 74.30 Kartographie: Allgemeines
     end
   end
 end

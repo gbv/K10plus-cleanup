@@ -36,13 +36,11 @@ Script `kxpo` can be used to get K10plus records via SRU in online expansion for
 See `*.fix` files in this repository for examples:
 
 - `ddc-edition.fix` - unify DDC edition statementin `045F$e`. [JIRA Issue](https://jira.gbv.de/browse/CBS-1765)
-- `bk-74.50.fix` - replace deleted BK class 74.50X. Applied by searching via SRU:
-
-      ./kxpo pica.bkl=74.50X --total 500 | ./fix bk-74.50X.fix > bk-74.50X.pp
+- `bk-74.50.fix` - replace deleted BK class 74.50X. [JIRA Issue](https://jira.gbv.de/browse/CBS-1766)
 
 ## See also
 
-- [https://pro4bib.github.io/pica/](Einführung in die Verarbeitung von PICA-Daten)
+- [Einführung in die Verarbeitung von PICA-Daten](https://pro4bib.github.io/pica/)
   with a section on editing PICA with Catmandu::PICA
 
 [Catmandu::PICA]: https://metacpan.org/release/Catmandu-PICA
